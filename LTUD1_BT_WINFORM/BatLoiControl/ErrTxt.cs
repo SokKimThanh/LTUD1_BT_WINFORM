@@ -307,26 +307,31 @@ namespace BT8_LISTBOX.BatLoiControl
             if (NoSymbol_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập ký tự đặc biệt";
                 PnError.BackColor = ErrColors.err_txt_nosymbol;
             }
             else if (NoText_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập chữ";
                 PnError.BackColor = ErrColors.err_txt_notext;
 
             }
             else if (NoSpace_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập khoảng trắng";
                 PnError.BackColor = ErrColors.err_txt_nospace;
             }
             else if (NoMinMax_KeyPress(sender, min, max))
             {
+                lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
                 PnError.BackColor = ErrColors.err_txt_minmax_length;
             }
             else
             {
-                PnError.BackColor = ErrColors.Transparent;
+                lblHint.Text = "Nhập ok!";
+                PnError.BackColor = ErrColors.mes_success;
                 e.Handled = false;
             }
         }
@@ -337,22 +342,27 @@ namespace BT8_LISTBOX.BatLoiControl
             if (NoSymbol_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập ký tự đặc biệt";
                 PnError.BackColor = ErrColors.err_txt_nosymbol;
             }
             else if (NoText_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập chữ";
                 PnError.BackColor = ErrColors.err_txt_notext;
 
             }
             else if (NoSpace_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập khoảng trắng";
                 PnError.BackColor = ErrColors.err_txt_nospace;
             }
+
             else
             {
-                PnError.BackColor = ErrColors.Transparent;
+                lblHint.Text = "Nhập ok!";
+                PnError.BackColor = ErrColors.mes_success;
                 e.Handled = false;
             }
         }
@@ -363,20 +373,25 @@ namespace BT8_LISTBOX.BatLoiControl
             if (NoSymbol_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập ký tự đặc biệt";
                 PnError.BackColor = ErrColors.err_txt_nosymbol;
             }
             else if (NoText_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập chữ";
                 PnError.BackColor = ErrColors.err_txt_notext;
+
             }
             else if (NoMinMax_KeyPress(sender, min, max))
             {
+                lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
                 PnError.BackColor = ErrColors.err_txt_minmax_length;
             }
             else
             {
-                PnError.BackColor = ErrColors.Transparent;
+                lblHint.Text = "Nhập ok!";
+                PnError.BackColor = ErrColors.mes_success;
                 e.Handled = false;
             }
         }
@@ -387,17 +402,20 @@ namespace BT8_LISTBOX.BatLoiControl
             if (NoSymbol_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập ký tự đặc biệt";
                 PnError.BackColor = ErrColors.err_txt_nosymbol;
             }
             else if (NoText_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập chữ";
                 PnError.BackColor = ErrColors.err_txt_notext;
 
             }
             else
             {
-                PnError.BackColor = ErrColors.Transparent;
+                lblHint.Text = "Nhập ok!";
+                PnError.BackColor = ErrColors.mes_success;
                 e.Handled = false;
             }
         }
@@ -408,20 +426,25 @@ namespace BT8_LISTBOX.BatLoiControl
             if (NoSymbol_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập ký tự đặc biệt";
                 PnError.BackColor = ErrColors.err_txt_nosymbol;
             }
             else if (NoNumber_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập số";
                 PnError.BackColor = ErrColors.err_txt_nonumber;
+
             }
             else if (NoMinMax_KeyPress(sender, min, max))
             {
-                PnError.BackColor = ErrColors.err_txt_nonumber;
+                lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
+                PnError.BackColor = ErrColors.err_txt_minmax_length;
             }
             else
             {
-                PnError.BackColor = ErrColors.Transparent;
+                lblHint.Text = "Nhập ok!";
+                PnError.BackColor = ErrColors.mes_success;
                 e.Handled = false;
             }
         }
@@ -432,164 +455,189 @@ namespace BT8_LISTBOX.BatLoiControl
             if (NoSymbol_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập ký tự đặc biệt";
                 PnError.BackColor = ErrColors.err_txt_nosymbol;
             }
             else if (NoNumber_KeyPress(e))
             {
                 e.Handled = true;
+                lblHint.Text = "Không nhập số";
                 PnError.BackColor = ErrColors.err_txt_nonumber;
+
             }
             else
             {
-                PnError.BackColor = ErrColors.Transparent;
                 e.Handled = false;
+                lblHint.Text = "Nhập ok!";
+                PnError.BackColor = ErrColors.mes_success;
             }
         }
 
-        public void NoSymNumSpaceMinMaxChange(object sender, int min = 3, int max = 16)
+        public bool NoSymNumSpaceMinMaxChange(object sender, int min = 3, int max = 16)
         {
             Control c = (Control)sender;
             if (NoSymbol_TextChanged(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoNumber_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoSpace_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoMinMax_TextChanged(sender, min, max))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else
             {
-                LblHint.Text = "";
+                return false;
             }
         }
-
-        public void NoSymNumMinMaxChange(object sender, int min = 3, int max = 16)
+        /// <summary>
+        /// No symbol, no number, not enough min max characters
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public bool NoSymNumMinMaxChange(object sender, int min = 3, int max = 16)
         {
             Control c = (Control)sender;
             if (NoSymbol_TextChanged(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoNumber_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoMinMax_TextChanged(sender, min, max))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else
             {
-                LblHint.Text = "";
+                return false;
             }
         }
-
-        public void NoSymNumChange(object sender)
+        /// <summary>
+        /// No symbol, no number
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <returns></returns>
+        public bool NoSymNumChange(object sender)
         {
             Control c = (Control)sender;
+
             if (NoSymbol_TextChanged(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoNumber_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else
             {
-                LblHint.Text = "";
+                return false;
             }
         }
-
-        public void NoSymTextSpaceMinMaxChange(object sender, int min = 3, int max = 16)
+        /// <summary>
+        /// No symbol, no text, nospace, not enough min max
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public bool NoSymTextSpaceMinMaxChange(object sender, int min = 3, int max = 16)
         {
             Control c = (Control)sender;
             if (NoSymbol_TextChanged(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoText_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoSpace_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoMinMax_TextChanged(sender, min, max))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else
             {
-                LblHint.Text = "";
+                return false;
             }
         }
-
-        public void NoSymTextSpaceChange(object sender)
+        /// <summary>
+        /// No symbol, no text, no space
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <returns></returns>
+        public bool NoSymTextSpaceChange(object sender)
         {
             Control c = (Control)sender;
             if (NoSymbol_TextChanged(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoText_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoSpace_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else
             {
-                LblHint.Text = "";
+                return false;
             }
         }
 
-        public void NoSymTextMinMaxChange(object sender, int min = 3, int max = 16)
+        public bool NoSymTextMinMaxChange(object sender, int min = 3, int max = 16)
         {
             Control c = (Control)sender;
             if (NoSymbol_TextChanged(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoText_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoMinMax_TextChanged(sender, min, max))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else
             {
-                LblHint.Text = "";
+                return false;
             }
         }
 
-        public void NoSymTextChange(object sender)
+        public bool NoSymTextChange(object sender)
         {
             Control c = (Control)sender;
             if (NoSymbol_TextChanged(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else if (NoText_TextChange(sender))
             {
-                LblHint.Text = c.Name;
+                return true;
             }
             else
             {
-                LblHint.Text = "";
+                return false;
             }
         }
     }

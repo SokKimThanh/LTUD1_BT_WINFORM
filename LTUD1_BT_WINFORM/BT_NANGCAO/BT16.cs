@@ -466,15 +466,15 @@ namespace BT8_LISTBOX.BT_NANGCAO
         private void BT16_FormClosing(object sender, FormClosingEventArgs e)
         {
             //TH danh sach rong
-            if (arraydata_sv.Count()==0)
+            if (arraydata_sv.Count() == 0)
             {
                 ErrFrm.FormClosingEvent(sender, e);
             }
 
             //TH danh sach khong rong
-            else if(arraydata_sv.Count()>0)
+            else if (arraydata_sv.Count() > 0)
             {
-                if(!ErrFrm.FormClosingSaveFileEvent(sender, e))
+                if (!ErrFrm.FormClosingSaveFileEvent(sender, e))
                 {
                     return;
                 }

@@ -28,21 +28,29 @@ namespace BT8_LISTBOX.BatLoiControl
             this.f = form;
             this.err = new ErrorProvider();
         }
+
         /// <summary>
-        /// Required field
+        /// Bắt buộc nhập
         /// </summary>
-        /// <param name="sender"></param>
-        /// <returns></returns>
-        public static void Required(object sender, ErrorProvider errorProvider, string requiredMessage = "Please fill the required field")
+        /// <param name="control"></param>
+        /// <param name="errMessage"></param>
+        public bool RequiredInput(Control control, string errMessage = "Bắt buộc nhập!")
         {
-            Control currentControl = (Control)sender;
-            if (currentControl != null && currentControl.Text.Length > 0 && requiredMessage.Length > 0)
+            // kiểm tra ô chưa nhập
+            if (string.IsNullOrEmpty(control.Text))
             {
-                errorProvider.SetError(currentControl, requiredMessage);
+                //Thêm thông báo lỗi
+                Err.SetError(control, errMessage);
+                control.Focus();
+                control.TabStop = true;
+                return true;
             }
             else
             {
-                errorProvider.SetError(currentControl, "");
+                // xóa thông báo lỗi
+                Err.SetError(control, "");
+                control.TabStop = false;
+                return false;
             }
         }
         public static bool FormClosingEvent(object sender, FormClosingEventArgs e)
