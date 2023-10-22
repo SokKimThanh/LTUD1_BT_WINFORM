@@ -299,7 +299,7 @@ namespace BT8_LISTBOX.BT_NANGCAO
                     foreach (TreeNode sinhvien in lop.Nodes)
                     {
                         // Thêm sinh viên vào lớp tin học
-                        if (sinhvien.Name.CompareTo(selectedNode.Name) == 0)
+                        if (sinhvien.Name.CompareTo(selectedNode.Name) == 0 && sinhvien.Name != "")
                         {
                             // Lấy giá trị của node 
                             string nodeId = selectedNode.Name;

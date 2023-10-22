@@ -319,6 +319,9 @@ namespace BT8_LISTBOX
             }
             bool ketqua = false;// giả sử chưa đọc được file
 
+            // xóa toàn bộ node
+            treeKhoa.Nodes.Clear();
+
             // bắt đầu đọc file
             string s = File.ReadAllText(fileName);
 
