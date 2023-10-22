@@ -141,7 +141,7 @@ namespace BT8_LISTBOX
             // chuyen man hinh theo ten da chon
             ToolStripMenuItem menuStrip = (ToolStripMenuItem)sender;
             // Thực hiện hành động khi newItem được nhấp
-            //MessageBox.Show("Bạn đã nhấp vào " + menuStrip.Text);
+            //MessageBox.ShowListView("Bạn đã nhấp vào " + menuStrip.Text);
 
             switch (menuStrip.Text)
             {

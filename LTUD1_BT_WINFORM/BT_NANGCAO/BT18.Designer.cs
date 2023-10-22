@@ -33,22 +33,26 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBox1 = new GroupBox();
             tableLayoutPanel5 = new TableLayoutPanel();
+            button2 = new Button();
             btnReadFile = new Button();
             btnWriteFile = new Button();
             btnDeleteAllNode = new Button();
             btnDeleteNode = new Button();
             btnEditNode = new Button();
-            button2 = new Button();
-            txtLastName = new TextBox();
+            txtPhone = new TextBox();
             txtFullName = new TextBox();
+            txtIDSV = new TextBox();
             btnExit = new Button();
-            tvDanhBa = new TreeView();
+            tvSinhVien = new TreeView();
             tableLayoutPanel3 = new TableLayoutPanel();
-            listView1 = new ListView();
             tableLayoutPanel4 = new TableLayoutPanel();
             button1 = new Button();
             groupBox2 = new GroupBox();
             textBox1 = new TextBox();
+            listView1 = new ListView();
+            chMaSV = new ColumnHeader();
+            chFullName = new ColumnHeader();
+            chPhoneNumber = new ColumnHeader();
             contextMenuStrip1 = new ContextMenuStrip(components);
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -66,7 +70,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 0);
-            tableLayoutPanel1.Controls.Add(tvDanhBa, 0, 0);
+            tableLayoutPanel1.Controls.Add(tvSinhVien, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
@@ -109,116 +113,35 @@
             // 
             tableLayoutPanel5.ColumnCount = 1;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel5.Controls.Add(button2, 0, 8);
             tableLayoutPanel5.Controls.Add(btnReadFile, 0, 7);
             tableLayoutPanel5.Controls.Add(btnWriteFile, 0, 6);
             tableLayoutPanel5.Controls.Add(btnDeleteAllNode, 0, 5);
             tableLayoutPanel5.Controls.Add(btnDeleteNode, 0, 4);
             tableLayoutPanel5.Controls.Add(btnEditNode, 0, 3);
-            tableLayoutPanel5.Controls.Add(button2, 0, 2);
-            tableLayoutPanel5.Controls.Add(txtLastName, 0, 1);
-            tableLayoutPanel5.Controls.Add(txtFullName, 0, 0);
+            tableLayoutPanel5.Controls.Add(txtPhone, 0, 2);
+            tableLayoutPanel5.Controls.Add(txtFullName, 0, 1);
+            tableLayoutPanel5.Controls.Add(txtIDSV, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(3, 22);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 8;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowCount = 9;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel5.Size = new Size(243, 401);
             tableLayoutPanel5.TabIndex = 10;
             // 
-            // btnReadFile
-            // 
-            btnReadFile.Dock = DockStyle.Fill;
-            btnReadFile.FlatAppearance.BorderColor = Color.Red;
-            btnReadFile.FlatAppearance.CheckedBackColor = Color.Lime;
-            btnReadFile.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
-            btnReadFile.FlatAppearance.MouseOverBackColor = Color.Lime;
-            btnReadFile.FlatStyle = FlatStyle.Flat;
-            btnReadFile.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnReadFile.Location = new Point(0, 350);
-            btnReadFile.Margin = new Padding(0);
-            btnReadFile.Name = "btnReadFile";
-            btnReadFile.Size = new Size(243, 51);
-            btnReadFile.TabIndex = 10;
-            btnReadFile.Text = "Read File";
-            btnReadFile.UseVisualStyleBackColor = true;
-            // 
-            // btnWriteFile
-            // 
-            btnWriteFile.Dock = DockStyle.Fill;
-            btnWriteFile.FlatAppearance.BorderColor = Color.Red;
-            btnWriteFile.FlatAppearance.CheckedBackColor = Color.Lime;
-            btnWriteFile.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
-            btnWriteFile.FlatAppearance.MouseOverBackColor = Color.Lime;
-            btnWriteFile.FlatStyle = FlatStyle.Flat;
-            btnWriteFile.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnWriteFile.Location = new Point(0, 300);
-            btnWriteFile.Margin = new Padding(0);
-            btnWriteFile.Name = "btnWriteFile";
-            btnWriteFile.Size = new Size(243, 50);
-            btnWriteFile.TabIndex = 9;
-            btnWriteFile.Text = "Write File";
-            btnWriteFile.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteAllNode
-            // 
-            btnDeleteAllNode.Dock = DockStyle.Fill;
-            btnDeleteAllNode.FlatAppearance.BorderColor = Color.Red;
-            btnDeleteAllNode.FlatAppearance.CheckedBackColor = Color.Lime;
-            btnDeleteAllNode.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
-            btnDeleteAllNode.FlatAppearance.MouseOverBackColor = Color.Lime;
-            btnDeleteAllNode.FlatStyle = FlatStyle.Flat;
-            btnDeleteAllNode.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDeleteAllNode.Location = new Point(0, 250);
-            btnDeleteAllNode.Margin = new Padding(0);
-            btnDeleteAllNode.Name = "btnDeleteAllNode";
-            btnDeleteAllNode.Size = new Size(243, 50);
-            btnDeleteAllNode.TabIndex = 8;
-            btnDeleteAllNode.Text = "Delete All Node";
-            btnDeleteAllNode.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteNode
-            // 
-            btnDeleteNode.Dock = DockStyle.Fill;
-            btnDeleteNode.FlatAppearance.BorderColor = Color.Red;
-            btnDeleteNode.FlatAppearance.CheckedBackColor = Color.Lime;
-            btnDeleteNode.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
-            btnDeleteNode.FlatAppearance.MouseOverBackColor = Color.Lime;
-            btnDeleteNode.FlatStyle = FlatStyle.Flat;
-            btnDeleteNode.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDeleteNode.Location = new Point(0, 200);
-            btnDeleteNode.Margin = new Padding(0);
-            btnDeleteNode.Name = "btnDeleteNode";
-            btnDeleteNode.Size = new Size(243, 50);
-            btnDeleteNode.TabIndex = 7;
-            btnDeleteNode.Text = "Delete Node";
-            btnDeleteNode.UseVisualStyleBackColor = true;
-            // 
-            // btnEditNode
-            // 
-            btnEditNode.Dock = DockStyle.Fill;
-            btnEditNode.FlatAppearance.BorderColor = Color.Red;
-            btnEditNode.FlatAppearance.CheckedBackColor = Color.Lime;
-            btnEditNode.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
-            btnEditNode.FlatAppearance.MouseOverBackColor = Color.Lime;
-            btnEditNode.FlatStyle = FlatStyle.Flat;
-            btnEditNode.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditNode.Location = new Point(0, 150);
-            btnEditNode.Margin = new Padding(0);
-            btnEditNode.Name = "btnEditNode";
-            btnEditNode.Size = new Size(243, 50);
-            btnEditNode.TabIndex = 6;
-            btnEditNode.Text = "Edit Name";
-            btnEditNode.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
+            button2.BackColor = Color.Transparent;
             button2.Dock = DockStyle.Fill;
             button2.FlatAppearance.BorderColor = Color.Red;
             button2.FlatAppearance.CheckedBackColor = Color.Lime;
@@ -226,27 +149,124 @@
             button2.FlatAppearance.MouseOverBackColor = Color.Lime;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(0, 100);
+            button2.Location = new Point(0, 352);
             button2.Margin = new Padding(0);
             button2.Name = "button2";
-            button2.Size = new Size(243, 50);
-            button2.TabIndex = 5;
+            button2.Size = new Size(243, 49);
+            button2.TabIndex = 3;
             button2.Text = "Add Name";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += btnAdd_Click;
             // 
-            // txtLastName
+            // btnReadFile
             // 
-            txtLastName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtLastName.BackColor = SystemColors.GradientActiveCaption;
-            txtLastName.Font = new Font("Segoe UI Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLastName.ForeColor = Color.Crimson;
-            txtLastName.Location = new Point(0, 53);
-            txtLastName.Margin = new Padding(0);
-            txtLastName.Name = "txtLastName";
-            txtLastName.PlaceholderText = "Phone Number";
-            txtLastName.Size = new Size(243, 43);
-            txtLastName.TabIndex = 2;
+            btnReadFile.BackColor = Color.Transparent;
+            btnReadFile.Dock = DockStyle.Fill;
+            btnReadFile.FlatAppearance.BorderColor = Color.Red;
+            btnReadFile.FlatAppearance.CheckedBackColor = Color.Lime;
+            btnReadFile.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            btnReadFile.FlatAppearance.MouseOverBackColor = Color.Lime;
+            btnReadFile.FlatStyle = FlatStyle.Flat;
+            btnReadFile.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReadFile.Location = new Point(0, 308);
+            btnReadFile.Margin = new Padding(0);
+            btnReadFile.Name = "btnReadFile";
+            btnReadFile.Size = new Size(243, 44);
+            btnReadFile.TabIndex = 8;
+            btnReadFile.Text = "Read File";
+            btnReadFile.UseVisualStyleBackColor = false;
+            btnReadFile.Click += btnReadFile_Click;
+            // 
+            // btnWriteFile
+            // 
+            btnWriteFile.BackColor = Color.Transparent;
+            btnWriteFile.Dock = DockStyle.Fill;
+            btnWriteFile.FlatAppearance.BorderColor = Color.Red;
+            btnWriteFile.FlatAppearance.CheckedBackColor = Color.Lime;
+            btnWriteFile.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            btnWriteFile.FlatAppearance.MouseOverBackColor = Color.Lime;
+            btnWriteFile.FlatStyle = FlatStyle.Flat;
+            btnWriteFile.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnWriteFile.Location = new Point(0, 264);
+            btnWriteFile.Margin = new Padding(0);
+            btnWriteFile.Name = "btnWriteFile";
+            btnWriteFile.Size = new Size(243, 44);
+            btnWriteFile.TabIndex = 7;
+            btnWriteFile.Text = "Write File";
+            btnWriteFile.UseVisualStyleBackColor = false;
+            btnWriteFile.Click += btnWriteFile_Click;
+            // 
+            // btnDeleteAllNode
+            // 
+            btnDeleteAllNode.BackColor = Color.Transparent;
+            btnDeleteAllNode.Dock = DockStyle.Fill;
+            btnDeleteAllNode.FlatAppearance.BorderColor = Color.Red;
+            btnDeleteAllNode.FlatAppearance.CheckedBackColor = Color.Lime;
+            btnDeleteAllNode.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            btnDeleteAllNode.FlatAppearance.MouseOverBackColor = Color.Lime;
+            btnDeleteAllNode.FlatStyle = FlatStyle.Flat;
+            btnDeleteAllNode.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeleteAllNode.Location = new Point(0, 220);
+            btnDeleteAllNode.Margin = new Padding(0);
+            btnDeleteAllNode.Name = "btnDeleteAllNode";
+            btnDeleteAllNode.Size = new Size(243, 44);
+            btnDeleteAllNode.TabIndex = 6;
+            btnDeleteAllNode.Text = "Delete All Node";
+            btnDeleteAllNode.UseVisualStyleBackColor = false;
+            btnDeleteAllNode.Click += btnDeleteAllNode_Click;
+            // 
+            // btnDeleteNode
+            // 
+            btnDeleteNode.BackColor = Color.Transparent;
+            btnDeleteNode.Dock = DockStyle.Fill;
+            btnDeleteNode.FlatAppearance.BorderColor = Color.Red;
+            btnDeleteNode.FlatAppearance.CheckedBackColor = Color.Lime;
+            btnDeleteNode.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            btnDeleteNode.FlatAppearance.MouseOverBackColor = Color.Lime;
+            btnDeleteNode.FlatStyle = FlatStyle.Flat;
+            btnDeleteNode.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeleteNode.Location = new Point(0, 176);
+            btnDeleteNode.Margin = new Padding(0);
+            btnDeleteNode.Name = "btnDeleteNode";
+            btnDeleteNode.Size = new Size(243, 44);
+            btnDeleteNode.TabIndex = 5;
+            btnDeleteNode.Text = "Delete Node";
+            btnDeleteNode.UseVisualStyleBackColor = false;
+            btnDeleteNode.Click += btnDeleteNode_Click;
+            // 
+            // btnEditNode
+            // 
+            btnEditNode.BackColor = Color.Transparent;
+            btnEditNode.Dock = DockStyle.Fill;
+            btnEditNode.FlatAppearance.BorderColor = Color.Red;
+            btnEditNode.FlatAppearance.CheckedBackColor = Color.Lime;
+            btnEditNode.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 255, 255);
+            btnEditNode.FlatAppearance.MouseOverBackColor = Color.Lime;
+            btnEditNode.FlatStyle = FlatStyle.Flat;
+            btnEditNode.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditNode.Location = new Point(0, 132);
+            btnEditNode.Margin = new Padding(0);
+            btnEditNode.Name = "btnEditNode";
+            btnEditNode.Size = new Size(243, 44);
+            btnEditNode.TabIndex = 4;
+            btnEditNode.Text = "Edit Name";
+            btnEditNode.UseVisualStyleBackColor = false;
+            btnEditNode.Click += btnEditNode_Click;
+            // 
+            // txtPhone
+            // 
+            txtPhone.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtPhone.BackColor = SystemColors.GradientActiveCaption;
+            txtPhone.Font = new Font("Segoe UI Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPhone.ForeColor = Color.Crimson;
+            txtPhone.Location = new Point(0, 88);
+            txtPhone.Margin = new Padding(0);
+            txtPhone.Name = "txtPhone";
+            txtPhone.PlaceholderText = "Phone Number";
+            txtPhone.Size = new Size(243, 43);
+            txtPhone.TabIndex = 2;
+            txtPhone.KeyPress += txtPhone_KeyPress;
+            txtPhone.Leave += txtLastName_Leave;
             // 
             // txtFullName
             // 
@@ -254,15 +274,32 @@
             txtFullName.BackColor = SystemColors.GradientActiveCaption;
             txtFullName.Font = new Font("Segoe UI Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtFullName.ForeColor = Color.Crimson;
-            txtFullName.Location = new Point(0, 3);
+            txtFullName.Location = new Point(0, 44);
             txtFullName.Margin = new Padding(0);
             txtFullName.Name = "txtFullName";
             txtFullName.PlaceholderText = "Full Name";
             txtFullName.Size = new Size(243, 43);
             txtFullName.TabIndex = 1;
+            txtFullName.KeyPress += txtFirstName_KeyPress;
+            txtFullName.Leave += txtFirstName_Leave;
+            // 
+            // txtIDSV
+            // 
+            txtIDSV.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtIDSV.BackColor = SystemColors.AppWorkspace;
+            txtIDSV.Enabled = false;
+            txtIDSV.Font = new Font("Segoe UI Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIDSV.ForeColor = Color.Crimson;
+            txtIDSV.Location = new Point(0, 0);
+            txtIDSV.Margin = new Padding(0);
+            txtIDSV.Name = "txtIDSV";
+            txtIDSV.PlaceholderText = "Student ID";
+            txtIDSV.Size = new Size(243, 43);
+            txtIDSV.TabIndex = 11;
             // 
             // btnExit
             // 
+            btnExit.BackColor = Color.Transparent;
             btnExit.Dock = DockStyle.Fill;
             btnExit.FlatAppearance.BorderColor = Color.Red;
             btnExit.FlatAppearance.CheckedBackColor = Color.Lime;
@@ -276,27 +313,30 @@
             btnExit.Size = new Size(249, 97);
             btnExit.TabIndex = 1;
             btnExit.Text = "Exit";
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseVisualStyleBackColor = false;
             // 
-            // tvDanhBa
+            // tvSinhVien
             // 
-            tvDanhBa.BackColor = Color.FromArgb(192, 255, 192);
-            tvDanhBa.Dock = DockStyle.Fill;
-            tvDanhBa.Location = new Point(0, 0);
-            tvDanhBa.Margin = new Padding(0);
-            tvDanhBa.Name = "tvDanhBa";
-            tvDanhBa.Size = new Size(249, 523);
-            tvDanhBa.TabIndex = 1;
-            tvDanhBa.AfterCollapse += tvDanhBa_AfterCollapse;
-            tvDanhBa.AfterExpand += tvDanhBa_AfterExpand;
-            tvDanhBa.AfterSelect += tvDanhBa_AfterSelect;
+            tvSinhVien.BackColor = Color.FromArgb(192, 255, 192);
+            tvSinhVien.Dock = DockStyle.Fill;
+            tvSinhVien.Font = new Font("Segoe UI Semilight", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tvSinhVien.ForeColor = Color.OrangeRed;
+            tvSinhVien.HideSelection = false;
+            tvSinhVien.Location = new Point(0, 0);
+            tvSinhVien.Margin = new Padding(0);
+            tvSinhVien.Name = "tvSinhVien";
+            tvSinhVien.Size = new Size(249, 523);
+            tvSinhVien.TabIndex = 1;
+            tvSinhVien.DrawNode += tvDanhBa_DrawNode;
+            tvSinhVien.AfterSelect += tvDanhBa_AfterSelect;
+            tvSinhVien.NodeMouseClick += tvDanhBa_NodeMouseClick;
             // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Controls.Add(listView1, 0, 1);
             tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 0, 0);
+            tableLayoutPanel3.Controls.Add(listView1, 0, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(498, 0);
             tableLayoutPanel3.Margin = new Padding(0);
@@ -306,20 +346,6 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 88.6076F));
             tableLayoutPanel3.Size = new Size(334, 523);
             tableLayoutPanel3.TabIndex = 2;
-            // 
-            // listView1
-            // 
-            listView1.BackColor = Color.FromArgb(192, 255, 192);
-            listView1.Dock = DockStyle.Fill;
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(0, 59);
-            listView1.Margin = new Padding(0);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(334, 464);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.List;
             // 
             // tableLayoutPanel4
             // 
@@ -339,6 +365,7 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.Transparent;
             button1.Dock = DockStyle.Fill;
             button1.FlatAppearance.BorderColor = Color.Red;
             button1.FlatAppearance.CheckedBackColor = Color.Lime;
@@ -350,9 +377,9 @@
             button1.Margin = new Padding(0);
             button1.Name = "button1";
             button1.Size = new Size(101, 59);
-            button1.TabIndex = 1;
+            button1.TabIndex = 10;
             button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -377,7 +404,38 @@
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Search Name";
             textBox1.Size = new Size(233, 43);
-            textBox1.TabIndex = 0;
+            textBox1.TabIndex = 9;
+            textBox1.KeyPress += txtFirstName_KeyPress;
+            // 
+            // listView1
+            // 
+            listView1.BackColor = Color.FromArgb(192, 255, 192);
+            listView1.Columns.AddRange(new ColumnHeader[] { chMaSV, chFullName, chPhoneNumber });
+            listView1.Dock = DockStyle.Fill;
+            listView1.Font = new Font("Segoe UI Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            listView1.ForeColor = Color.Crimson;
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
+            listView1.Location = new Point(0, 59);
+            listView1.Margin = new Padding(0);
+            listView1.MultiSelect = false;
+            listView1.Name = "listView1";
+            listView1.Size = new Size(334, 464);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.List;
+            // 
+            // chMaSV
+            // 
+            chMaSV.Width = 120;
+            // 
+            // chFullName
+            // 
+            chFullName.Width = 120;
+            // 
+            // chPhoneNumber
+            // 
+            chPhoneNumber.Width = 120;
             // 
             // contextMenuStrip1
             // 
@@ -414,10 +472,9 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private Button btnExit;
-        private TreeView tvDanhBa;
+        private TreeView tvSinhVien;
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel3;
-        private ListView listView1;
         private TableLayoutPanel tableLayoutPanel4;
         private ContextMenuStrip contextMenuStrip1;
         private Button button1;
@@ -428,9 +485,14 @@
         private Button btnWriteFile;
         private Button btnDeleteAllNode;
         private Button btnDeleteNode;
-        private Button btnEditNode;
-        private Button button2;
-        private TextBox txtLastName;
+        private TextBox txtPhone;
         private TextBox txtFullName;
+        private TextBox txtIDSV;
+        private ListView listView1;
+        private ColumnHeader chMaSV;
+        private ColumnHeader chFullName;
+        private ColumnHeader chPhoneNumber;
+        private Button button2;
+        private Button btnEditNode;
     }
 }

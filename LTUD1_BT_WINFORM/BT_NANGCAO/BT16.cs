@@ -142,10 +142,8 @@ namespace BT8_LISTBOX.BT_NANGCAO
                     return;
                 }
                 //chọn rồi thì tạo mới 1 đối tượng sinh viên
-                SinhVien udpateSV = new SinhVien();
-                udpateSV.Id = txtIDSinhVien.Text;
-                udpateSV.Hoten = txtHoTen.Text;
-                udpateSV.Phone = txtPhone.Text;
+                SinhVien udpateSV = new SinhVien(txtIDSinhVien.Text, txtHoTen.Text, txtPhone.Text);
+
                 // TH Kiểm tra số điện thoại 
                 if (arraydata_sv.ContainsPhoneNumber(udpateSV))
                 {
@@ -172,7 +170,7 @@ namespace BT8_LISTBOX.BT_NANGCAO
                 }
 
                 // update lại list view hiển thị lên list  view (update listview)
-                if (!arraydata_sv.Show(lvSinhVien))
+                if (!arraydata_sv.ShowListView(lvSinhVien))
                 {
                     r.PnError.BackColor = ErrColors.mes_error;
                     r.LblHint.Text = "Không hiển thị được listview!";
@@ -207,10 +205,10 @@ namespace BT8_LISTBOX.BT_NANGCAO
                     if (s == DialogResult.Yes)
                     {
                         int row = lvSinhVien.SelectedIndices[0];
-                        SinhVien sv = new SinhVien();
-                        sv.Id = lvSinhVien.Items[row].SubItems[0].Text;
-                        sv.Hoten = lvSinhVien.Items[row].SubItems[1].Text;
-                        sv.Phone = lvSinhVien.Items[row].SubItems[2].Text;
+                        string id = lvSinhVien.Items[row].SubItems[0].Text;
+                        string hoten = lvSinhVien.Items[row].SubItems[1].Text;
+                        string phone = lvSinhVien.Items[row].SubItems[2].Text;
+                        SinhVien sv = new SinhVien(id, hoten, phone);
 
                         if (!arraydata_sv.Remove(sv))
                         {
@@ -223,7 +221,7 @@ namespace BT8_LISTBOX.BT_NANGCAO
                         r.LblHint.Text = "Xóa sinh viên thành công!";//thông báo cập nhật sinh viên thành công
 
                         // // TH:xóa list view thành rỗng!
-                        if (!arraydata_sv.Show(lvSinhVien))
+                        if (!arraydata_sv.ShowListView(lvSinhVien))
                         {
                             r.PnError.BackColor = ErrColors.mes_error;
                             r.LblHint.Text = "Danh sách sinh viên rỗng!";//thông báo cập nhật sinh viên không thành công
@@ -399,14 +397,14 @@ namespace BT8_LISTBOX.BT_NANGCAO
                 string fileName;
                 fileName = dlg.FileName;
                 // Đọc file 
-                if (!arraydata_sv.DocFile(fileName))
+                if (!arraydata_sv.DocFileListView(fileName))
                 {
                     r.PnError.BackColor = ErrColors.mes_error;
                     r.LblHint.Text = "Không đọc file rỗng!";
                     return;
                 }
                 // đọc file xong thì hiển thị lên lên view (update listview)
-                if (!arraydata_sv.Show(lvSinhVien))
+                if (!arraydata_sv.ShowListView(lvSinhVien))
                 {
                     r.PnError.BackColor = ErrColors.mes_error;
                     r.LblHint.Text = "Không hiển thị được listview!";
@@ -437,7 +435,7 @@ namespace BT8_LISTBOX.BT_NANGCAO
                 {
                     // mở browser lên tìm file để lưu
                     string file_name = sfd.FileName;
-                    if (arraydata_sv.GhiFile(file_name))
+                    if (arraydata_sv.GhiFileListView(file_name))
                     {
                         r.LblHint.Text = "Ghi file thành công!";
                         r.PnError.BackColor = ErrColors.mes_success;
@@ -489,7 +487,7 @@ namespace BT8_LISTBOX.BT_NANGCAO
                     {
                         // mở browser lên tìm file để lưu
                         string file_name = sfd.FileName;
-                        if (arraydata_sv.GhiFile(file_name))
+                        if (arraydata_sv.GhiFileListView(file_name))
                         {
                             r.LblHint.Text = "Ghi file thành công!";
                             r.PnError.BackColor = ErrColors.mes_success;

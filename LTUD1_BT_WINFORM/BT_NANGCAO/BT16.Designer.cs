@@ -69,26 +69,26 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { smallToolStripMenuItem, detailToolStripMenuItem, xóaToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(105, 70);
+            contextMenuStrip1.Size = new Size(114, 76);
             // 
             // smallToolStripMenuItem
             // 
             smallToolStripMenuItem.Name = "smallToolStripMenuItem";
-            smallToolStripMenuItem.Size = new Size(104, 22);
+            smallToolStripMenuItem.Size = new Size(113, 24);
             smallToolStripMenuItem.Text = "Small";
             smallToolStripMenuItem.Click += smallToolStripMenuItem_Click;
             // 
             // detailToolStripMenuItem
             // 
             detailToolStripMenuItem.Name = "detailToolStripMenuItem";
-            detailToolStripMenuItem.Size = new Size(104, 22);
+            detailToolStripMenuItem.Size = new Size(113, 24);
             detailToolStripMenuItem.Text = "Detail";
             detailToolStripMenuItem.Click += detailToolStripMenuItem_Click;
             // 
             // xóaToolStripMenuItem
             // 
             xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            xóaToolStripMenuItem.Size = new Size(104, 22);
+            xóaToolStripMenuItem.Size = new Size(113, 24);
             xóaToolStripMenuItem.Text = "Xóa";
             xóaToolStripMenuItem.Click += btnXoa_Click;
             // 
@@ -98,10 +98,9 @@
             // 
             // btnGhiFile
             // 
-            btnGhiFile.Location = new Point(400, 86);
-            btnGhiFile.Margin = new Padding(3, 2, 3, 2);
+            btnGhiFile.Location = new Point(457, 109);
             btnGhiFile.Name = "btnGhiFile";
-            btnGhiFile.Size = new Size(75, 22);
+            btnGhiFile.Size = new Size(86, 28);
             btnGhiFile.TabIndex = 49;
             btnGhiFile.Text = "Ghi File";
             btnGhiFile.UseVisualStyleBackColor = true;
@@ -109,10 +108,9 @@
             // 
             // btnDocFile
             // 
-            btnDocFile.Location = new Point(400, 25);
-            btnDocFile.Margin = new Padding(3, 2, 3, 2);
+            btnDocFile.Location = new Point(457, 32);
             btnDocFile.Name = "btnDocFile";
-            btnDocFile.Size = new Size(75, 23);
+            btnDocFile.Size = new Size(86, 29);
             btnDocFile.TabIndex = 48;
             btnDocFile.Text = "Đọc File";
             btnDocFile.UseVisualStyleBackColor = true;
@@ -121,12 +119,11 @@
             // trackBar1
             // 
             trackBar1.Anchor = AnchorStyles.None;
-            trackBar1.Location = new Point(136, 132);
-            trackBar1.Margin = new Padding(3, 2, 3, 2);
+            trackBar1.Location = new Point(155, 167);
             trackBar1.Maximum = 250;
             trackBar1.Minimum = 60;
             trackBar1.Name = "trackBar1";
-            trackBar1.Size = new Size(135, 45);
+            trackBar1.Size = new Size(154, 45);
             trackBar1.TabIndex = 47;
             trackBar1.Value = 250;
             trackBar1.Scroll += trackBar1_Scroll;
@@ -134,9 +131,10 @@
             // btnXoaHet
             // 
             btnXoaHet.Anchor = AnchorStyles.None;
-            btnXoaHet.Location = new Point(400, 128);
+            btnXoaHet.Location = new Point(457, 162);
+            btnXoaHet.Margin = new Padding(3, 4, 3, 4);
             btnXoaHet.Name = "btnXoaHet";
-            btnXoaHet.Size = new Size(75, 23);
+            btnXoaHet.Size = new Size(86, 29);
             btnXoaHet.TabIndex = 46;
             btnXoaHet.Text = "Xóa Hết";
             btnXoaHet.UseVisualStyleBackColor = true;
@@ -144,14 +142,16 @@
             // 
             // lvSinhVien
             // 
+            lvSinhVien.BackColor = Color.FromArgb(192, 255, 192);
             lvSinhVien.Columns.AddRange(new ColumnHeader[] { colIDSV, columnHeader1, columnHeader2 });
             lvSinhVien.ContextMenuStrip = contextMenuStrip1;
             lvSinhVien.Dock = DockStyle.Bottom;
             lvSinhVien.FullRowSelect = true;
             lvSinhVien.GridLines = true;
-            lvSinhVien.Location = new Point(0, 215);
+            lvSinhVien.Location = new Point(0, 273);
+            lvSinhVien.Margin = new Padding(3, 4, 3, 4);
             lvSinhVien.Name = "lvSinhVien";
-            lvSinhVien.Size = new Size(502, 187);
+            lvSinhVien.Size = new Size(574, 236);
             lvSinhVien.TabIndex = 45;
             lvSinhVien.UseCompatibleStateImageBehavior = false;
             lvSinhVien.View = View.Details;
@@ -175,9 +175,10 @@
             // btnXoa
             // 
             btnXoa.Anchor = AnchorStyles.None;
-            btnXoa.Location = new Point(319, 128);
+            btnXoa.Location = new Point(365, 162);
+            btnXoa.Margin = new Padding(3, 4, 3, 4);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(75, 23);
+            btnXoa.Size = new Size(86, 29);
             btnXoa.TabIndex = 43;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
@@ -187,9 +188,9 @@
             // 
             lblWidth.Anchor = AnchorStyles.None;
             lblWidth.AutoSize = true;
-            lblWidth.Location = new Point(45, 140);
+            lblWidth.Location = new Point(51, 177);
             lblWidth.Name = "lblWidth";
-            lblWidth.Size = new Size(83, 15);
+            lblWidth.Size = new Size(95, 19);
             lblWidth.TabIndex = 42;
             lblWidth.Text = "Column width";
             // 
@@ -197,9 +198,9 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(45, 107);
+            label2.Location = new Point(51, 136);
             label2.Name = "label2";
-            label2.Size = new Size(77, 15);
+            label2.Size = new Size(91, 19);
             label2.TabIndex = 41;
             label2.Text = "Số Điện thoại";
             // 
@@ -207,18 +208,19 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(45, 73);
+            label1.Location = new Point(51, 92);
             label1.Name = "label1";
-            label1.Size = new Size(44, 15);
+            label1.Size = new Size(52, 19);
             label1.TabIndex = 40;
             label1.Text = "Họ Tên";
             // 
             // txtPhone
             // 
             txtPhone.Anchor = AnchorStyles.None;
-            txtPhone.Location = new Point(136, 99);
+            txtPhone.Location = new Point(155, 125);
+            txtPhone.Margin = new Padding(3, 4, 3, 4);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(170, 23);
+            txtPhone.Size = new Size(194, 26);
             txtPhone.TabIndex = 39;
             txtPhone.Text = "840902123456";
             txtPhone.Click += txtEmpty_Event;
@@ -228,9 +230,10 @@
             // txtHoTen
             // 
             txtHoTen.Anchor = AnchorStyles.None;
-            txtHoTen.Location = new Point(136, 69);
+            txtHoTen.Location = new Point(155, 87);
+            txtHoTen.Margin = new Padding(3, 4, 3, 4);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(170, 23);
+            txtHoTen.Size = new Size(194, 26);
             txtHoTen.TabIndex = 38;
             txtHoTen.Text = "Sok Kim Thanh";
             txtHoTen.Click += txtEmpty_Event;
@@ -241,9 +244,10 @@
             // 
             txtColWidth.Anchor = AnchorStyles.None;
             txtColWidth.Enabled = false;
-            txtColWidth.Location = new Point(270, 132);
+            txtColWidth.Location = new Point(309, 167);
+            txtColWidth.Margin = new Padding(3, 4, 3, 4);
             txtColWidth.Name = "txtColWidth";
-            txtColWidth.Size = new Size(36, 23);
+            txtColWidth.Size = new Size(41, 26);
             txtColWidth.TabIndex = 37;
             txtColWidth.Text = "250";
             txtColWidth.TextChanged += txtColWidth_TextChanged;
@@ -251,9 +255,10 @@
             // btnCapNhat
             // 
             btnCapNhat.Anchor = AnchorStyles.None;
-            btnCapNhat.Location = new Point(319, 85);
+            btnCapNhat.Location = new Point(365, 108);
+            btnCapNhat.Margin = new Padding(3, 4, 3, 4);
             btnCapNhat.Name = "btnCapNhat";
-            btnCapNhat.Size = new Size(75, 23);
+            btnCapNhat.Size = new Size(86, 29);
             btnCapNhat.TabIndex = 36;
             btnCapNhat.Text = "Cập nhật";
             btnCapNhat.UseVisualStyleBackColor = true;
@@ -262,9 +267,10 @@
             // btnThem
             // 
             btnThem.Anchor = AnchorStyles.None;
-            btnThem.Location = new Point(319, 25);
+            btnThem.Location = new Point(365, 32);
+            btnThem.Margin = new Padding(3, 4, 3, 4);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(75, 23);
+            btnThem.Size = new Size(86, 29);
             btnThem.TabIndex = 35;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
@@ -273,9 +279,9 @@
             // lblIDSinhVien
             // 
             lblIDSinhVien.AutoSize = true;
-            lblIDSinhVien.Location = new Point(44, 29);
+            lblIDSinhVien.Location = new Point(50, 37);
             lblIDSinhVien.Name = "lblIDSinhVien";
-            lblIDSinhVien.Size = new Size(76, 15);
+            lblIDSinhVien.Size = new Size(90, 19);
             lblIDSinhVien.TabIndex = 50;
             lblIDSinhVien.Text = "Mã Sinh Viên";
             // 
@@ -286,17 +292,16 @@
             txtIDSinhVien.Enabled = false;
             txtIDSinhVien.Font = new Font("Segoe UI Semilight", 18F, FontStyle.Regular, GraphicsUnit.Point);
             txtIDSinhVien.ForeColor = Color.Red;
-            txtIDSinhVien.Location = new Point(135, 24);
-            txtIDSinhVien.Margin = new Padding(3, 2, 3, 2);
+            txtIDSinhVien.Location = new Point(154, 30);
             txtIDSinhVien.Name = "txtIDSinhVien";
-            txtIDSinhVien.Size = new Size(170, 39);
+            txtIDSinhVien.Size = new Size(194, 39);
             txtIDSinhVien.TabIndex = 51;
             // 
             // BT16
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(502, 402);
+            ClientSize = new Size(574, 509);
             Controls.Add(txtIDSinhVien);
             Controls.Add(lblIDSinhVien);
             Controls.Add(btnGhiFile);
@@ -313,6 +318,7 @@
             Controls.Add(txtColWidth);
             Controls.Add(btnCapNhat);
             Controls.Add(btnThem);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "BT16";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BT16";

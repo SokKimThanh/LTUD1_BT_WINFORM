@@ -126,6 +126,20 @@ namespace BT8_LISTBOX.BatLoiControl
             // thực hiện phép tính  
             return true;
         }
+
+        public static bool DialogConfirm(string v)
+        {
+            DialogResult r = MessageBox.Show(v, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No)
+            {
+                // hủy xóa
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
 

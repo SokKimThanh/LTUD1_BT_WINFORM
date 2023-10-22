@@ -83,7 +83,7 @@
             btnShow.Name = "btnShow";
             btnShow.Size = new Size(94, 51);
             btnShow.TabIndex = 4;
-            btnShow.Text = "Show";
+            btnShow.Text = "ShowListView";
             btnShow.UseVisualStyleBackColor = true;
             btnShow.Click += btnShow_Click;
             // 
