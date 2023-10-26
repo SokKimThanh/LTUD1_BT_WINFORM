@@ -1,4 +1,4 @@
-﻿using BT8_LISTBOX.BatLoiControl;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace BT8_LISTBOX.BT_NANGCAO
+namespace LTUD1_BT_WINFORM
 {
     public partial class BT18 : Form
     {
